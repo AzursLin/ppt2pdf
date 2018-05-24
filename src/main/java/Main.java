@@ -1,8 +1,8 @@
+
 import com.artofsolving.jodconverter.DocumentConverter;
 import com.artofsolving.jodconverter.openoffice.connection.OpenOfficeConnection;
 import com.artofsolving.jodconverter.openoffice.connection.SocketOpenOfficeConnection;
 import com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter;
-import com.sun.deploy.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,14 +34,14 @@ public class Main {
                 if (directory2.exists()) {
                     String[] files = directory2.list();
                     for (String file:files) {
-                        String suffix = file.substring(file.lastIndexOf(".") + 1);
-                        if ("ppt".equals(suffix)) {
+                        String suffix = file.substring(file.lastIndexOf("."));//后缀名
+                        if (".ppt".equals(suffix)||".pptx".equals(suffix)) {
                             String fileName = file.substring(0,file.lastIndexOf("."));
                             String tartName = path+fileName;
                             File exFile = new File(tartName+".pdf");
                             if (!exFile.exists()) {
-                                System.out.println("开始转换"+tartName+".ppt");
-                                Word2Pdf(tartName+".ppt", tartName+".pdf");
+                                System.out.println("开始转换"+tartName+suffix);
+                                Word2Pdf(tartName+suffix, tartName+".pdf");
                             }
                         }
                     }
