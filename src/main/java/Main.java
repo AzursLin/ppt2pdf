@@ -19,20 +19,20 @@ public class Main {
             System.out.println("ppt2pdf只允许单线程运行");
             SimpleDateFormat dateFormat= new SimpleDateFormat("yyyyMMdd");
             String nowDirName = "";
+            String path="";
             while(true) {
                 Date date = new Date();
                 File directory = new File("");
                 String dirName = dateFormat.format(date);
-                String path="";
                 if (!dirName.equals(nowDirName)) {
                     nowDirName = dirName;
                     path = directory.getAbsolutePath()+"\\"+"201403170943381112\\"+nowDirName+"\\";
                     System.out.println(nowDirName);
                     System.out.println("当前监视目录"+path);//获取路径
                 }
-                directory = new File(path);
-                if (directory.isDirectory()) {
-                    String[] files = directory.list();
+                File directory2 = new File(path);
+                if (directory2.exists()) {
+                    String[] files = directory2.list();
                     for (String file:files) {
                         String suffix = file.substring(file.lastIndexOf(".") + 1);
                         if ("ppt".equals(suffix)) {
