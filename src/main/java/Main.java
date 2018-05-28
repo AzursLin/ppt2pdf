@@ -26,26 +26,33 @@ public class Main {
                 String dirName = dateFormat.format(date);
                 if (!dirName.equals(nowDirName)) {
                     nowDirName = dirName;
-                    path = directory.getAbsolutePath()+"\\"+"201403170943381112\\"+nowDirName+"\\";
+                    path = directory.getAbsolutePath();
                     System.out.println(nowDirName);
-                    System.out.println("当前监视目录"+path);//获取路径
+                    System.out.println("当前监视目录"+directory.getAbsolutePath()+"\\?\\"+nowDirName);//获取路径
                 }
                 File directory2 = new File(path);
-                if (directory2.exists()) {
-                    String[] files = directory2.list();
-                    for (String file:files) {
-                        String suffix = file.substring(file.lastIndexOf("."));//后缀名
-                        if (".ppt".equals(suffix)||".pptx".equals(suffix)) {
-                            String fileName = file.substring(0,file.lastIndexOf("."));
-                            String tartName = path+fileName;
-                            File exFile = new File(tartName+".pdf");
-                            if (!exFile.exists()) {
-                                System.out.println("开始转换"+tartName+suffix);
-                                Word2Pdf(tartName+suffix, tartName+".pdf");
+                String[] files = directory2.list();
+                for (String dirName2:files) {
+                    String checkPath = directory.getAbsolutePath()+"\\"+dirName2+"\\";
+                    if (new File(checkPath).isDirectory()) {
+                        checkPath +=  nowDirName+"\\";
+                        if (new File(checkPath).isDirectory()) {
+                            String[] files2 = new File(checkPath).list();
+                            for (String file:files2) {
+                                String suffix = file.substring(file.lastIndexOf("."));//后缀名
+                                if (".ppt".equals(suffix)||".pptx".equals(suffix)) {
+                                    String fileName = file.substring(0,file.lastIndexOf("."));
+                                    String tartName = checkPath+fileName;
+                                    File exFile = new File(tartName+".pdf");
+                                    if (!exFile.exists()) {
+                                        System.out.println("开始转换"+tartName+suffix);
+                                        Word2Pdf(tartName+suffix, tartName+".pdf");
+                                    }
+                                }
                             }
                         }
-                    }
 
+                    }
                 }
                 Thread.sleep(800);
             }
