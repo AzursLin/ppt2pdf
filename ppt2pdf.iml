@@ -31,6 +31,6 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.5.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-jdk14:1.5.6" level="project" />
-    <orderEntry type="library" name="jodconverter-core-3.0-beta-4-jahia5-javadoc" level="project" />
+    <orderEntry type="library" name="jodconverter-core-3.0-beta-4-jahia5" level="project" />
   </component>
 </module>

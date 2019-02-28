@@ -18,6 +18,8 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/src/main/resources/libs/jodconverter-2.2.2.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/src/main/resources/libs/jodconverter-cli-2.2.2.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar" path-in-jar="/" />
+      <element id="library" level="project" name="jodconverter-core-3.0-beta-4-jahia5" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/main/resources/libs/jodconverter-core-3.0-beta-4-jahia5.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

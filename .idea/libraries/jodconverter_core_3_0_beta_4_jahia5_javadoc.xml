@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jodconverter-core-3.0-beta-4-jahia5-javadoc">
-    <CLASSES />
-    <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/src/main/resources/libs/jodconverter-core-3.0-beta-4-jahia5-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES />
-  </library>
-</component>

@@ -22,21 +22,25 @@ import java.util.Date;
  */
 public class Main {
     public static void main(String[] args) {
+
+
+
+
         try {
             System.out.println("ppt2pdf只允许单线程运行");
-/*            SimpleDateFormat dateFormat= new SimpleDateFormat("yyyyMMdd");
+            SimpleDateFormat dateFormat= new SimpleDateFormat("yyyyMMdd");
             String nowDirName = "";
-            String path="";*/
+            String path="";
 //            while(true) {
-/*                Date date = new Date();
-                File directory = new File("");*/
-/*                String dirName = dateFormat.format(date);
+                Date date = new Date();
+                File directory = new File("");
+                String dirName = dateFormat.format(date);
                 if (!dirName.equals(nowDirName)) {
                     nowDirName = dirName;
                     path = directory.getAbsolutePath();
                     System.out.println(nowDirName);
                     System.out.println("当前监视目录"+directory.getAbsolutePath()+"\\?\\"+nowDirName);//获取路径
-                }*/
+                }
 
             File directory2 = new File(new File("").getAbsolutePath()+"\\");
                 String[] files = directory2.list();
@@ -76,11 +80,11 @@ public class Main {
             System.out.println("所有目录转换完成");
         } catch (Exception e) {
             System.out.println(e.getMessage());
-/*            File file = new File("errLog.txt");
+            File file = new File("errLog.txt");
             PrintStream stream = null;
             e.printStackTrace(stream);
             stream.flush();
-            stream.close();*/
+            stream.close();
         }
 
     }
@@ -126,7 +130,7 @@ try {
 }*/
 
         DefaultOfficeManagerConfiguration configuration = new DefaultOfficeManagerConfiguration();
-        String  OPEN_OFFICE_HOME="D:\\lxzProject\\ppttopdf\\LibreOffice 5\\";
+        String  OPEN_OFFICE_HOME="C:\\LibreOffice\\";
         int OPEN_OFFICE_PORT = 8100;
         ProcessManager processManager = new PureJavaProcessManager();
         OfficeManager officeManager;
